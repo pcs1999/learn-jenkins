@@ -1,16 +1,18 @@
-pipeline {
+pipeline{
+agent any
 
+stages{
+    stage('stage1 testing variables') {
+    steps{
+     script{
+      def abc="hello"
+      def xyz= "world"
 
- agent {
- label { 'workstation'}
- }
+      print abc
+      print xyz
+    }
+       }
+   }
 
- stages {
+}
 
- stage ('hello')
- steps {
-
- echo "hello world"
- }
-
- }
