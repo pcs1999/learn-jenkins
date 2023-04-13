@@ -11,7 +11,7 @@
              print abc
              print xyz
 
-             // 2nd method od calling the variable
+             // 2nd method of calling the variable
 
              print "abc = ${abc}"
              print "xyz = ${xyz}"
