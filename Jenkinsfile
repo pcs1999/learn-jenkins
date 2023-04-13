@@ -13,8 +13,8 @@
 
              // 2nd method od calling the variable
 
-             print "abc = $(abc)"
-             print "xyz = $(xyz)"
+             print "abc = ${abc}"
+             print "xyz = ${xyz}"
 
 
 
