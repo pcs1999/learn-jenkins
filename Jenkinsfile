@@ -4,13 +4,24 @@
      stage('stage1 testing variables') {
        steps {
          script {
-          def abc = "hello"
-          def xyz = "world"
-            print abc
-            print xyz
-         }
-    }
+             // declaring the variable
+             def abc = "hello"
+             def xyz = "world"
+             // 1st method of calling the variable
+             print abc
+             print xyz
+
+             // 2nd method od calling the variable
+
+             print "abc = ${abc}"
+             print "xyz = ${abc}"
+
+
+
+          }
        }
+    }
+
   }
 
 }
