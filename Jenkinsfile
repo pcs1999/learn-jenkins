@@ -1,5 +1,9 @@
  pipeline {
   agent any
+
+      environment {
+        SECRET_VAR = credentials('hello')  
+    }
    stages {
      stage('stage1 testing variables') {
        steps {
