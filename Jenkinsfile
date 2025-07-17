@@ -25,9 +25,11 @@
     }
     stage('Quality Control') {
       steps {
+        script {
         withCredentials([usernamePassword(credentialsId: 'SONAR_AUTH', usernameVariable: 'SONAR_USER', passwordVariable: 'SONAR_PASS')]) {
-      sh  "sonar-scanner -Dsonar.host.url=http://172.31.13.126:9000 -Dsonar.login=${SONAR_USER} -Dsonar.password=${SONAR_PASS} -Dsonar.projectKey=cart"
-      }
+         sh  "sonar-scanner -Dsonar.host.url=http://172.31.13.126:9000 -Dsonar.login=${SONAR_USER} -Dsonar.password=${SONAR_PASS} -Dsonar.projectKey=cart"
+        } 
+     }
     }
   }
 
