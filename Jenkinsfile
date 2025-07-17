@@ -1,9 +1,10 @@
  pipeline {
   agent any
 
-      environment {
-        SECRET_VAR = credentials('hello')  
-    }
+ environment {
+   SONAR_USER = "chandra"
+   SONAR_PASS = "admin"
+ }
    stages {
      stage('stage1 testing variables') {
        steps {
@@ -19,13 +20,14 @@
 
              print "abc = ${abc}"
              print "xyz = ${xyz}"
-
-
-
           }
        }
     }
-
+    stage('Quality Control') {
+      steps {
+      sh  "sonar-scanner -Dsonar.host.url=http://172.31.13.126:9000 -Dsonar.login=${SONAR_USER} -Dsonar.password=${SONAR_PASS} -Dsonar.projectKey=cart"
+      }
+    }
   }
 
 }
